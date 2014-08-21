@@ -3,37 +3,16 @@ import stdlib;
 import list;
 import dict;
 
-struct Coordinates {
-	x: int, y:int
-}
-
-implement Coordinates {
-	let north(self):Coordinates -> {
-		return Coordinates(self.x + 1, self.y); 
-	}
-
-	let south(self):Coordinates -> {
-		return Coordinates(self.x - 1, self.y); 
-	}
-
-	let west(self):Coordinates -> {
-		return Coordinates(self.x, self.y - 1); 
-	}
-
-	let east(self):Coordinates -> {
-		return Coordinates(self.x, self.y - 1); 
-	}
-}
-
-
 struct Room {
 	# In Zork, A room has a number called rval. (who knows what it does) 
 	# The rval of a room is usually 0. 
+	coordinates:Coordinates, # The rooms coordinates
 	rval:int,
 	name:str,
 	description:str, # i.e "This is a forest, with trees in all directions. To the east, there appears to be sunlight."
 	# A list of all usable items in the "room"
 	items: dict.Dict
+
 
 
 }
